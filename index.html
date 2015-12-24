@@ -26,9 +26,9 @@
 
 <p>If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo (or vise verse), it helps to have a quick little comparison guide to aid the process. That's what this is. </p>
 
-<p>Well, that's what it will be - as soon as I actually finish it.</p>
-
-<p><a href="#select-by-id">Select By Id</a>
+<p>Well, that's what it will be - as soon as I actually finish it.
+<a id="top"></a>
+<a href="#select-by-id">Select By Id</a>
 <a href="#select-by-class">Select By Class</a></p>
 
 <h2>
@@ -49,7 +49,9 @@
 })
 </code></pre>
 
-<p>Both methods return the element with id “idName”. Dojo's dom.byId is just an alias for document.getElementById. This means anything you can do with an element retrieved through getElementById you can do with an element accessed through dom.byId.</p>
+<p>Both methods return the element with id “idName”. Dojo's dom.byId is just an alias for document.getElementById. This means anything you can do with an element retrieved through getElementById you can do with an element accessed through dom.byId.
+(<a href="#top">Back to top</a>) 
+<br></p>
 
 <h2>
 <a id="select-by-class" class="anchor" href="#select-by-class" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Class</em></strong>
@@ -88,7 +90,7 @@ query(“.className:first-child”)
 
 <p>})</p>
 
-<p>jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method with affect every element with that class name. 
+<p>jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method will affect every element with that class name. 
 Dojo’s query, on the other hand, returns a nodeList which you then have to loop through to access the individual elements in it.</p>
 
       <footer class="site-footer">
