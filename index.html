@@ -19,25 +19,36 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="jquery-vs-dojo" class="anchor" href="#jquery-vs-dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery vs Dojo</h3>
+      <h1>
+<a id="jquery-vs-dojo" class="anchor" href="#jquery-vs-dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery vs Dojo</h1>
 
 <p>There are plenty of places to find comparisons of jQuery and pre – Dojo 1.7 methods but I wanted to have a place to compare jQuery with Dojo’s AMD style.</p>
 
 <p>If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo (or vise verse), it helps to have a quick little comparison guide to aid the process. That's what this is. </p>
 
-<p>Well, that's what it will be - as soon as I actually write it.</p>
+<p>Well, that's what it will be - as soon as I actually finish it.</p>
 
-<p></p><table>
-<thead>
-<tr>
-<th>Action</th>
-<th>jQuery</th>
-<th>Dojo</th>
-<th>Explanation</th>
-</tr>
-</thead>
-</table>
+<p><a href="#Select-By-Id">link</a></p>
+
+<h2>
+<a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
+</h2>
+
+<h3>
+<a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+
+<pre><code>$(“#idName”)
+</code></pre>
+
+<h3>
+<a id="dojo" class="anchor" href="#dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+
+<pre><code>Require([“dojo/dom”], function(dom){
+    dom.byId(“idName”)
+})
+</code></pre>
+
+<p>Both methods return the element with id “idName”. Dojo's dom.byId is just an alias for document.getElementById. This means anything you can do with an element retrieved through getElementById you can do with an element accessed through dom.byId.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/RyanDavison/jQueryvsDojo">jQueryvsDojo</a> is maintained by <a href="https://github.com/RyanDavison">RyanDavison</a>.</span>
