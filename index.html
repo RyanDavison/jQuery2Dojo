@@ -30,8 +30,8 @@
 <a id="top"></a></p>
 
 <p><a href="#select-by-id">Select By Id</a><br>
-<a href="#select-by-class">Select By Class</a>
-<a href="#css-properties">Get and Set CSS properties</a></p>
+<a href="#select-by-class">Select By Class</a><br>
+<a href="#css-properties">Get and Set CSS properties</a><br></p>
 
 <h2>
 <a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
@@ -116,7 +116,10 @@ $(“.className:first-child”);
 <h3>
 <a id="jquery-2" class="anchor" href="#jquery-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
 
-<pre><code>$(“#idName”).css("display")//get the value for the "display" property
+<pre><code>//Get
+$(“#idName”).css("display")//get the value for a property
+
+//Set
 $(“#idName”).css("display", "block") //set a single css property
 $(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css properties
 </code></pre>
@@ -125,7 +128,10 @@ $(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css 
 <a id="dojo-2" class="anchor" href="#dojo-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/dom”, "dojo/dom-style"], function(dom, domStyle){
-        domStyle.get(dom.byId(“idName”), "display");//get the value for the "display" property
+        //Get
+        domStyle.get(dom.byId(“idName”), "display");//get the value for a property
+
+        //Set
         domStyle.set(dom.byId(“idName”), "display", "block");//set a single css property
         domStyle.set(dom.byId(“idName”), {//set multiple css properties
             display: "block",
