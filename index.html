@@ -30,7 +30,8 @@
 <a id="top"></a></p>
 
 <p><a href="#select-by-id">Select By Id</a><br>
-<a href="#select-by-class">Select By Class</a></p>
+<a href="#select-by-class">Select By Class</a>
+<a href="#css-properties">Get and Set CSS properties</a></p>
 
 <h2>
 <a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
@@ -39,15 +40,15 @@
 <h3>
 <a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
 
-<pre><code>$(“#idName”)
+<pre><code>$(“#idName”);
 </code></pre>
 
 <h3>
 <a id="dojo" class="anchor" href="#dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/dom”], function(dom){
-    dom.byId(“idName”)
-})
+    dom.byId(“idName”);
+});
 </code></pre>
 
 <p>Both methods return the element with id “idName”. Dojo's dom.byId is just an alias for document.getElementById. This means anything you can do with an element retrieved through getElementById you can do with an element accessed through dom.byId.
@@ -65,13 +66,13 @@
 <a id="jquery-1" class="anchor" href="#jquery-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
 
 <pre><code>//select by class
-$(“.className”)
+$(“.className”);
 
 //select by element
-$(“div”)
+$(“div”);
 
 //select by pseudo Class
-$(“.className:first-child”)
+$(“.className:first-child”);
 </code></pre>
 
 <h3>
@@ -86,27 +87,54 @@ $(“.className:first-child”)
 
     //query by pseudo Class
     query(“.className:first-child”)
-})
+});
 </code></pre>
 
 <p>jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method will affect every element with that class name.</p>
 
 <p>Dojo’s query, on the other hand, returns a nodeList which you then have to loop through to access the individual elements in it. For example, to change the css of all elements with the class "className" in jQuery you would do this:</p>
 
-<pre><code>$(".className").css("color":"red");
+<pre><code>$(".className").css("color", "red");
 </code></pre>
 
 <p>To do the same thing in Dojo you would do this:</p>
 
 <pre><code>Require([“dojo/query”, "dojo/dom-style"], function(query, domStyle){
     query(“.className”).forEach(function(element){
-        domStyle.set(element, "color", "red");
+        domStyle.set(element, "display", "block");
     })
-})
+});
 </code></pre>
 
 <p>As you can see, jQuery abstracts the process making it much simpler while Dojo gives you more control over what you can do with the elements in the nodelist.
 (<a href="#top">Back to top</a>) <br></p>
+
+<h2>
+<a id="css-properties" class="anchor" href="#css-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>CSS Properties</em></strong>
+</h2>
+
+<h3>
+<a id="jquery-2" class="anchor" href="#jquery-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+
+<pre><code>$(“#idName”).css("display")//get the value for the "display" property
+$(“#idName”).css("display", "block") //set a single css property
+$(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css properties
+</code></pre>
+
+<h3>
+<a id="dojo-2" class="anchor" href="#dojo-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+
+<pre><code>Require([“dojo/dom”, "dojo/dom-style"], function(dom, domStyle){
+        domStyle.get(dom.byId(“idName”), "display");//get the value for the "display" property
+        domStyle.set(dom.byId(“idName”), "display", "block");//set a single css property
+        domStyle.set(dom.byId(“idName”), {//set multiple css properties
+            display: "block",
+            width: "100px",
+        });
+});
+</code></pre>
+
+<p>(<a href="#top">Back to top</a>) <br></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/RyanDavison/jQueryvsDojo">jQueryvsDojo</a> is maintained by <a href="https://github.com/RyanDavison">RyanDavison</a>.</span>
