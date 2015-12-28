@@ -30,7 +30,7 @@
 <a id="top"></a></p>
 
 <p><a href="#select-by-id">Select By Id</a><br>
-<a href="#select-by-class">Select By Class(also element and psuedo-class)</a></p>
+<a href="#select-by-class">Select By Class</a></p>
 
 <h2>
 <a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
@@ -64,13 +64,13 @@
 <h3>
 <a id="jquery-1" class="anchor" href="#jquery-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
 
-<pre><code>//query by class
+<pre><code>//select by class
 $(“.className”)
 
-//query by element
+//select by element
 $(“div”)
 
-//query by pseudo Class
+//select by pseudo Class
 $(“.className:first-child”)
 </code></pre>
 
@@ -91,7 +91,21 @@ $(“.className:first-child”)
 
 <p>jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method will affect every element with that class name.</p>
 
-<p>Dojo’s query, on the other hand, returns a nodeList which you then have to loop through to access the individual elements in it.
+<p>Dojo’s query, on the other hand, returns a nodeList which you then have to loop through to access the individual elements in it. For example, to change the css of all elements with the class "className" in jQuery you would do this:</p>
+
+<pre><code>$(".className").css("color":"red");
+</code></pre>
+
+<p>To do the same thing in Dojo you would do this:</p>
+
+<pre><code>Require([“dojo/query”, "dojo/dom-style"], function(query, domStyle){
+    query(“.className”).forEach(function(element){
+        domStyle.set(element, "color", "red");
+    })
+})
+</code></pre>
+
+<p>As you can see, jQuery abstracts the process making it much simpler while Dojo gives you more control over what you can do with the elements in the nodelist.
 (<a href="#top">Back to top</a>) <br></p>
 
       <footer class="site-footer">
