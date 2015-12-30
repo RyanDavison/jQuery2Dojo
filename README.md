@@ -10,6 +10,7 @@ Well, that's what it will be - as soon as I actually finish it.
 [Select By Id](#select-by-id)<br>
 [Select By Class](#select-by-class)<br>
 [Get and Set CSS properties](#css-properties)<br>
+[Get Child Elements](#get-child-elements)<br>
 
 ## ***Select By Id***
 ### jQuery
@@ -83,5 +84,29 @@ As you can see, jQuery abstracts the process making it much simpler while Dojo g
                 width: "100px",
             });
     });
+([Back to top](#top)) <br>
+
+## ***Get Child Elements***
+### jQuery
+    // the .find() method gets child elements any number of levels below the matched elements
+    $("#idName").find('span').css({
+        //Set the background color of all span elements that are descendants of #idName
+        "background-color": "white";
+    });
+
+    //.children() gets child elements only a single level below the matched elements
+    $("#idName").children('span').css({ 
+        //Set the background color of all span elements that are descendants of #idName
+        "background-color": "white";
+    });
+### Dojo
+    Require([“dojo/query”], function(query){
+        //Query the first nodeList to get child elements any number of levels below the matched elements
+        query("#qButtonBlock").query('span').style("backgroundColor","white");
+
+        //.children() gets child elements only a single level below the matched elements
+        query("#qButtonBlock").children('span').style("backgroundColor","white");
+    });
+
 ([Back to top](#top)) <br>
 
