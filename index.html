@@ -31,7 +31,8 @@
 
 <p><a href="#select-by-id">Select By Id</a><br>
 <a href="#select-by-class">Select By Class</a><br>
-<a href="#css-properties">Get and Set CSS properties</a><br></p>
+<a href="#css-properties">Get and Set CSS properties</a><br>
+<a href="#get-child-elements">Get Child Elements</a><br></p>
 
 <h2>
 <a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
@@ -136,6 +137,40 @@ $(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css 
             display: "block",
             width: "100px",
         });
+});
+</code></pre>
+
+<p>(<a href="#top">Back to top</a>) <br></p>
+
+<h2>
+<a id="get-child-elements" class="anchor" href="#get-child-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Get Child Elements</em></strong>
+</h2>
+
+<h3>
+<a id="jquery-3" class="anchor" href="#jquery-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+
+<pre><code>// the .find() method gets child elements any number of levels below the matched elements
+$("#idName").find('span').css({
+    //Set the background color of all span elements that are descendants of #idName
+    "background-color": "white";
+});
+
+//.children() gets child elements only a single level below the matched elements
+$("#idName").children('span').css({ 
+    //Set the background color of all span elements that are descendants of #idName
+    "background-color": "white";
+});
+</code></pre>
+
+<h3>
+<a id="dojo-3" class="anchor" href="#dojo-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+
+<pre><code>Require([“dojo/query”], function(query){
+    //Query the first nodeList to get child elements any number of levels below the matched elements
+    query("#qButtonBlock").query('span').style("backgroundColor","white");
+
+    //.children() gets child elements only a single level below the matched elements
+    query("#qButtonBlock").children('span').style("backgroundColor","white");
 });
 </code></pre>
 
