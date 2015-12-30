@@ -46,16 +46,16 @@ Both methods return the element with id “idName”. Dojo's dom.byId is just an
         query(“.className:first-child”)
     });
 
-jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method will affect every element with that class name.
+jQuery’s class selector actually selects all elements with that class so if you chain a method onto the end of the selector, the method will affect every element with that class name by performing an implicit loop.
 
 Dojo’s query, on the other hand, returns a nodeList which you then have to loop through to access the individual elements in it. For example, to change the css of all elements with the class "className" in jQuery you would do this:
 
-    $(".className").css("color", "red");
+    $(".className").css("color", "red"); //jQuery implicitly loops through an unseen node list
 
 To do the same thing in Dojo you would do this:
 
     Require([“dojo/query”, "dojo/dom-style"], function(query, domStyle){
-        query(“.className”).forEach(function(element){
+        query(“.className”).forEach(function(element){ //Here we have to explicitly loop through the node list
             domStyle.set(element, "display", "block");
         })
     });
@@ -85,3 +85,4 @@ As you can see, jQuery abstracts the process making it much simpler while Dojo g
             });
     });
 ([Back to top](#top)) <br>
+
