@@ -56,7 +56,7 @@ To do the same thing in Dojo you would do this:
 
     Require([“dojo/query”, "dojo/dom-style"], function(query, domStyle){
         query(“.className”).forEach(function(element){ //Here we have to explicitly loop through the node list
-            domStyle.set(element, "display", "block");
+            domStyle.set(element, "color", "red");
         })
     });
 
