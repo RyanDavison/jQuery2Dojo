@@ -101,7 +101,7 @@ As you can see, jQuery abstracts the process making it much simpler while Dojo g
     });
 ### Dojo
     Require([“dojo/query”], function(query){
-        //Query the first nodeList to get child elements any number of levels below the matched elements
+        //Query the initial matched elements to get child elements any number of levels below the matched elements
         query("#qButtonBlock").query('span').style("backgroundColor","white");
 
         //.children() gets child elements only a single level below the matched elements
