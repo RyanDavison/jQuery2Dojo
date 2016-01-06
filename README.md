@@ -55,7 +55,7 @@ Dojo’s query, on the other hand, returns a nodeList which you can loop through
 
 To do the same thing in Dojo you would do this:
 
-    Require([“dojo/query”, "dojo/dom-style"], function(query){
+    Require([“dojo/query”], function(query){
         query(“.className”).style("color", "red");
         })
     });
