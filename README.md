@@ -2,7 +2,7 @@
 
 There are plenty of places to find comparisons of jQuery and pre – Dojo 1.7 methods but I wanted to have a place to compare jQuery with Dojo’s AMD style.
 
-If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo (or vise verse), it helps to have a quick little comparison guide to aid the process. That's what this is. 
+If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo or you want to use your familiarity with jQuery to figure out Dojo, it helps to have a quick little comparison guide to aid the process. That's what this is. 
 
 Well, that's what it will be - as soon as I actually finish it.
 <a id="top"></a>
@@ -11,6 +11,7 @@ Well, that's what it will be - as soon as I actually finish it.
 [Select By Class](#select-by-class)<br>
 [Get and Set CSS properties](#css-properties)<br>
 [Get Child Elements](#get-child-elements)<br>
+[Get Child Elements](#ajax)<br>
 
 ## ***Select By Id***
 ### jQuery
@@ -110,3 +111,40 @@ As you can see, jQuery abstracts the process making it much simpler while Dojo g
 
 ([Back to top](#top)) <br>
 
+## ***Ajax***
+### jQuery
+    // the .ajax() method performs an asynchronous HTTP (Ajax) request
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: url,
+            data: "{}",
+            dataType: "json",
+            success: function (success) {
+                //Do something with your returned data
+            },
+            failure: function (err) {
+                //Present an error to your user
+                alert(err);
+            }
+        });
+
+### Dojo
+        require(["dojo/request"], function(request){
+            request.post(url, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: "{}",
+                handleAs: "json"
+            }).then(
+                function(success){
+                    //Do something with your returned data
+                },
+                function(err){
+                    //Present and error to your user
+                }
+             );
+        });
+
+([Back to top](#top)) <br>
