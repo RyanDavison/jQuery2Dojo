@@ -20,11 +20,11 @@
 
     <section class="main-content">
       <h1>
-<a id="jquery-vs-dojo" class="anchor" href="#jquery-vs-dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery vs Dojo</h1>
+<a id="jquery-vs-dojo" class="anchor" href="#jquery-vs-dojo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery vs Dojo</h1>
 
 <p>There are plenty of places to find comparisons of jQuery and pre – Dojo 1.7 methods but I wanted to have a place to compare jQuery with Dojo’s AMD style.</p>
 
-<p>If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo (or vise verse), it helps to have a quick little comparison guide to aid the process. That's what this is. </p>
+<p>If you ever find yourself needing to convert a jQuery laden web page to one that uses AMD style Dojo or you want to use your familiarity with jQuery to figure out Dojo, it helps to have a quick little comparison guide to aid the process. That's what this is. </p>
 
 <p>Well, that's what it will be - as soon as I actually finish it.
 <a id="top"></a></p>
@@ -32,20 +32,21 @@
 <p><a href="#select-by-id">Select By Id</a><br>
 <a href="#select-by-class">Select By Class</a><br>
 <a href="#css-properties">Get and Set CSS properties</a><br>
-<a href="#get-child-elements">Get Child Elements</a><br></p>
+<a href="#get-child-elements">Get Child Elements</a><br>
+<a href="#ajax">Get Child Elements</a><br></p>
 
 <h2>
-<a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
+<a id="select-by-id" class="anchor" href="#select-by-id" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><em>Select By Id</em></strong>
 </h2>
 
 <h3>
-<a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+<a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h3>
 
 <pre><code>$(“#idName”);
 </code></pre>
 
 <h3>
-<a id="dojo" class="anchor" href="#dojo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+<a id="dojo" class="anchor" href="#dojo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/dom”], function(dom){
     dom.byId(“idName”);
@@ -56,15 +57,15 @@
 (<a href="#top">Back to top</a>) <br></p>
 
 <h2>
-<a id="select-by-class" class="anchor" href="#select-by-class" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Select By Class</em></strong>
+<a id="select-by-class" class="anchor" href="#select-by-class" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><em>Select By Class</em></strong>
 </h2>
 
 <h3>
-<a id="also-select-by-pseudo-class-or-element" class="anchor" href="#also-select-by-pseudo-class-or-element" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Also select by pseudo class or element</em>
+<a id="also-select-by-pseudo-class-or-element" class="anchor" href="#also-select-by-pseudo-class-or-element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><em>Also select by pseudo class or element</em>
 </h3>
 
 <h3>
-<a id="jquery-1" class="anchor" href="#jquery-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+<a id="jquery-1" class="anchor" href="#jquery-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h3>
 
 <pre><code>//select by class
 $(“.className”);
@@ -77,7 +78,7 @@ $(“.className:first-child”);
 </code></pre>
 
 <h3>
-<a id="dojo-1" class="anchor" href="#dojo-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+<a id="dojo-1" class="anchor" href="#dojo-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/query”], function(query){
     //query by class
@@ -110,11 +111,11 @@ $(“.className:first-child”);
 (<a href="#top">Back to top</a>) <br></p>
 
 <h2>
-<a id="css-properties" class="anchor" href="#css-properties" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>CSS Properties</em></strong>
+<a id="css-properties" class="anchor" href="#css-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><em>CSS Properties</em></strong>
 </h2>
 
 <h3>
-<a id="jquery-2" class="anchor" href="#jquery-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+<a id="jquery-2" class="anchor" href="#jquery-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h3>
 
 <pre><code>//Get
 $(“#idName”).css("display")//get the value for a property
@@ -125,7 +126,7 @@ $(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css 
 </code></pre>
 
 <h3>
-<a id="dojo-2" class="anchor" href="#dojo-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+<a id="dojo-2" class="anchor" href="#dojo-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/dom”, "dojo/dom-style"], function(dom, domStyle){
         //Get
@@ -143,11 +144,11 @@ $(“#idName”).css({"display": "block", "width": "100px"}) //set multiple css 
 <p>(<a href="#top">Back to top</a>) <br></p>
 
 <h2>
-<a id="get-child-elements" class="anchor" href="#get-child-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong><em>Get Child Elements</em></strong>
+<a id="get-child-elements" class="anchor" href="#get-child-elements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><em>Get Child Elements</em></strong>
 </h2>
 
 <h3>
-<a id="jquery-3" class="anchor" href="#jquery-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h3>
+<a id="jquery-3" class="anchor" href="#jquery-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h3>
 
 <pre><code>// the .find() method gets child elements any number of levels below the matched elements
 $("#idName").find('span').css({
@@ -163,7 +164,7 @@ $("#idName").children('span').css({
 </code></pre>
 
 <h3>
-<a id="dojo-3" class="anchor" href="#dojo-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dojo</h3>
+<a id="dojo-3" class="anchor" href="#dojo-3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dojo</h3>
 
 <pre><code>Require([“dojo/query”], function(query){
     //Query the initial matched elements to get child elements any number of levels below the matched elements
@@ -172,6 +173,53 @@ $("#idName").children('span').css({
     //.children() gets child elements only a single level below the matched elements
     query("#qButtonBlock").children('span').style("backgroundColor","white");
 });
+</code></pre>
+
+<p>(<a href="#top">Back to top</a>) <br></p>
+
+<h2>
+<a id="ajax" class="anchor" href="#ajax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong><em>Ajax</em></strong>
+</h2>
+
+<h3>
+<a id="jquery-4" class="anchor" href="#jquery-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h3>
+
+<pre><code>// the .ajax() method performs an asynchronous HTTP (Ajax) request
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: url,
+        data: "{}",
+        dataType: "json",
+        success: function (success) {
+            //Do something with your returned data
+        },
+        failure: function (err) {
+            //Present an error to your user
+            alert(err);
+        }
+    });
+</code></pre>
+
+<h3>
+<a id="dojo-4" class="anchor" href="#dojo-4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dojo</h3>
+
+<pre><code>    require(["dojo/request"], function(request){
+        request.post(url, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: "{}",
+            handleAs: "json"
+        }).then(
+            function(success){
+                //Do something with your returned data
+            },
+            function(err){
+                //Present and error to your user
+            }
+         );
+    });
 </code></pre>
 
 <p>(<a href="#top">Back to top</a>) <br></p>
