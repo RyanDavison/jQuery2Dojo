@@ -11,7 +11,7 @@ Well, that's what it will be - as soon as I actually finish it.
 [Select By Class](#select-by-class)<br>
 [Get and Set CSS properties](#css-properties)<br>
 [Get Child Elements](#get-child-elements)<br>
-[Get Child Elements](#ajax)<br>
+[Ajax](#ajax)<br>
 
 ## ***Select By Id***
 ### jQuery
